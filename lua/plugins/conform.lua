@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return { -- Autoformat
   "stevearc/conform.nvim",
   lazy = false,

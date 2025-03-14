@@ -13,7 +13,7 @@ This will copy the configuration files to `~/.config/nvim/`.
 To enter a development environment with all necessary tools:
 
 ```bash
-nix develop github:connoralydon/nvim
+nix develop github:connoralydon/nvim/main --no-write-lock-file
 ```
 
 ## Usage
