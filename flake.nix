@@ -34,11 +34,12 @@
             fzf
             nodejs_23
             go
+            rsync
           ];
           shellHook = ''
             mkdir -p ~/.config/nvim
-            cp -r ${nvim-config}/* ~/.config/nvim/
-            echo "Neovim configuration has been set up in ~/.config/nvim"
+            rsync -av --delete ${nvim-config}/ ~/.config/nvim/
+            echo "Neovim configuration has been updated in ~/.config/nvim"
           '';
         };
 
@@ -47,8 +48,8 @@
           paths = [
             (pkgs.writeShellScriptBin "setup-nvim" ''
               mkdir -p ~/.config/nvim
-              cp -r ${nvim-config}/* ~/.config/nvim/
-              echo "Neovim configuration has been set up in ~/.config/nvim"
+              rsync -av --delete ${nvim-config}/ ~/.config/nvim/
+              echo "Neovim configuration has been updated in ~/.config/nvim"
             '')
           ];
         };

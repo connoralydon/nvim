@@ -13,7 +13,7 @@ This will copy the configuration files to `~/.config/nvim/`.
 To enter a development environment with all necessary tools:
 
 ```bash
-nix develop github:connoralydon/nvim/main --no-write-lock-file --refresh
+nix develop github:connoralydon/nvim/main --no-write-lock-file
 ```
 
 ## Usage
@@ -24,8 +24,7 @@ Once in the development environment, you can use `nvim` to start Neovim with thi
 
 ## TODO
 
-1. ~~add `nix develop`~~ (Done)
-2. compare:
+1. compare:
 
 - quickstart.nvim
 - nvchad
