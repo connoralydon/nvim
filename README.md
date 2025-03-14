@@ -1,4 +1,43 @@
-# 💤 LazyVim
+# nvim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+## Quick Start with Nix
+
+To quickly set up this Neovim configuration using Nix:
+
+```bash
+nix run github:clydon/nvim#setup-nvim
+```
+
+This will copy the configuration files to `~/.config/nvim/`.
+
+To enter a development environment with all necessary tools:
+
+```bash
+nix develop github:connoralydon/nvim
+```
+
+## Usage
+
+Once in the development environment, you can use `nvim` to start Neovim with this configuration.
+
+## Notes
+
+## TODO
+
+1. ~~add `nix develop`~~ (Done)
+2. compare:
+
+- quickstart.nvim
+- nvchad
+- lazyvim
+
+## Included Tools
+
+The development environment includes:
+
+- Neovim
+- GNU Make
+- Clang
+- fzf
+- Node.js 23
+- Go
