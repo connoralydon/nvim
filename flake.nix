@@ -55,9 +55,9 @@
         };
 
         packages.default = pkgs.symlinkJoin {
-          name = "nvim-config";
+          name = "nvim_config";
           paths = [
-            (pkgs.writeShellScriptBin "setup-nvim" ''
+            (pkgs.writeShellScriptBin "setup_nvim" ''
             echo "test2"
               mkdir -p ~/.config/nvim
               if [ -f ~/.config/nvim/config.hash ]; then
