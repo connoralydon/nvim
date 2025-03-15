@@ -39,7 +39,7 @@
           shellHook = ''
             mkdir -p ~/.config/nvim
             rsync -av --delete ${nvim-config}/ ~/.config/nvim/
-            echo "Neovim configuration has been updated in ~/.config/nvim"
+            echo "Neovim configuration has been pushed to ~/.config/nvim"
           '';
         };
       }
