@@ -38,6 +38,7 @@
             rsync
           ];
           shellHook = ''
+            echo "test1"
             mkdir -p ~/.config/nvim
             if [ -f ~/.config/nvim/config.hash ]; then
               if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
@@ -57,6 +58,7 @@
           name = "nvim-config";
           paths = [
             (pkgs.writeShellScriptBin "setup-nvim" ''
+            echo "test2"
               mkdir -p ~/.config/nvim
               if [ -f ~/.config/nvim/config.hash ]; then
                 if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
