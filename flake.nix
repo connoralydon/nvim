@@ -49,7 +49,7 @@
               else
                 rsync -av --delete --exclude='.git' ${nvim-config}/ ~/.config/nvim/
                 cp ${nvim-config}/config.hash ~/.config/nvim/config.hash
-
+                echo "updated"
                 echo "Neovim configuration has been updated in ~/.config/nvim"
               fi
             else
