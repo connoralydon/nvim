@@ -47,7 +47,9 @@
               if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
                 echo "Neovim configuration is up to date"
               else
-                rsync -av --delete ${nvim-config}/ ~/.config/nvim/
+                rsync -av --delete --exclude='.git' ${nvim-config}/ ~/.config/nvim/
+                cp ${nvim-config}/config.hash ~/.config/nvim/config.hash
+
                 echo "Neovim configuration has been updated in ~/.config/nvim"
               fi
             else
