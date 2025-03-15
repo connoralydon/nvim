@@ -40,9 +40,9 @@
           shellHook = ''
             mkdir -p ~/.config/nvim
             if [ -f ~/.config/nvim/config.hash ]; then
-              echo -n ${nvim-config}
+              echo ${nvim-config}
               cat ${nvim-config}/config.hash 
-              echo -n ~/.config/nvim/config.hash
+              echo ~/.config/nvim/config.hash
               cat ~/.config/nvim/config.hash
               if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
                 echo "Neovim configuration is up to date"
