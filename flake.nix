@@ -38,9 +38,10 @@
             rsync
           ];
           shellHook = ''
-            echo "test1"
             mkdir -p ~/.config/nvim
             if [ -f ~/.config/nvim/config.hash ]; then
+              cat ${nvim-config}/config.hash 
+              cat ~/.config/nvim/config.hash
               if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
                 echo "Neovim configuration is up to date"
               else
@@ -52,27 +53,6 @@
               echo "Neovim configuration has been initialized in ~/.config/nvim"
             fi
           '';
-        };
-
-        packages.default = pkgs.symlinkJoin {
-          name = "nvim_config";
-          paths = [
-            (pkgs.writeShellScriptBin "setup_nvim" ''
-            echo "test2"
-              mkdir -p ~/.config/nvim
-              if [ -f ~/.config/nvim/config.hash ]; then
-                if diff -q ${nvim-config}/config.hash ~/.config/nvim/config.hash >/dev/null; then
-                  echo "Neovim configuration is up to date"
-                else
-                  rsync -av --delete ${nvim-config}/ ~/.config/nvim/
-                  echo "Neovim configuration has been updated in ~/.config/nvim"
-                fi
-              else
-                rsync -av --delete ${nvim-config}/ ~/.config/nvim/
-                echo "Neovim configuration has been initialized in ~/.config/nvim"
-              fi
-            '')
-          ];
         };
       }
     );
