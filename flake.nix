@@ -22,7 +22,7 @@
           installPhase = ''
             mkdir -p $out
             cp -r ./* $out/
-            find $out -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum > $out/config.hash
+            find $out -type f -not -path '*/.git/*' -print0 | sort -z | xargs -0 sha256sum | sha256sum > $out/config.hash
           '';
         };
       in
