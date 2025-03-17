@@ -11,12 +11,13 @@ return {
     auto_suggestions_provider = "openai",
     -- cursor_applying_provider = "openai",
     openai = {
-      endpoint = "https://alfred.itools.anduril.dev/raw",
-      -- model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-      model = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      -- endpoint = "https://alfred.itools.anduril.dev/raw",
+      endpoint = "https://api.openai.com/v1",
+      model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+      -- model = "anthropic.claude-3-5-sonnet-20240620-v1:0",
       timeout = 30000, -- timeout in milliseconds
       -- temperature = 0, -- adjust if needed
-      max_tokens = 4096,
+      -- max_tokens = 4096,
     },
 
     behaviour = {

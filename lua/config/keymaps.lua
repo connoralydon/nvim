@@ -45,6 +45,9 @@ map("n", "<leader>h7", "<cmd>lua require('harpoon.mark').nav_file(7)<CR>")
 map("n", "<leader>h8", "<cmd>lua require('harpoon.mark').nav_file(8)<CR>")
 map("n", "<leader>h9", "<cmd>lua require('harpoon.mark').nav_file(9)<CR>")
 
+-- avante
+map("n", "<leader>ax", "<cmd>AvanteClear<CR>")
+
 -- tab through hooks
 map("n", "0", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
 map("n", "9", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
