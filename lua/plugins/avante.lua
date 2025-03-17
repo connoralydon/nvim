@@ -1,3 +1,11 @@
+--
+local DEV_ENV = os.getenv("DEV_ENV") -- "work" | "home"
+if DEV_ENV == nil then
+  print("`DEV_ENV` is unset, using 'home' as default environment. It can be 'home' or 'work'")
+  DEV_ENV = "home"
+end
+
+--
 -- guide - https://nithinbekal.com/posts/avante-nvim/
 return {
   "yetone/avante.nvim",
@@ -12,9 +20,15 @@ return {
     -- cursor_applying_provider = "openai",
     openai = {
       -- endpoint = "https://alfred.itools.anduril.dev/raw",
-      endpoint = "https://api.openai.com/v1",
-      model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-      -- model = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      -- endpoint = "https://api.openai.com/v1",
+      endpoint = (
+        ((DEV_ENV == "work") and "https://alfred.itools.anduril.dev/raw")
+        or ((DEV_ENV == "home") and "https://api.openai.com/v1")
+      ),
+      model = (
+        ((DEV_ENV == "work") and "anthropic.claude-3-5-sonnet-20240620-v1:0")
+        or ((DEV_ENV == "home") and "gpt-4o")
+      ),
       timeout = 30000, -- timeout in milliseconds
       -- temperature = 0, -- adjust if needed
       -- max_tokens = 4096,
