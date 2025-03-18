@@ -5,6 +5,8 @@ if DEV_ENV == nil then
   DEV_ENV = "home"
 end
 
+local WORK_API_URL = os.getenv("WORK_API_URL")
+
 --
 -- guide - https://nithinbekal.com/posts/avante-nvim/
 return {
@@ -21,10 +23,7 @@ return {
     openai = {
       -- endpoint = "https://alfred.itools.anduril.dev/raw",
       -- endpoint = "https://api.openai.com/v1",
-      endpoint = (
-        ((DEV_ENV == "work") and "https://alfred.itools.anduril.dev/raw")
-        or ((DEV_ENV == "home") and "https://api.openai.com/v1")
-      ),
+      endpoint = (((DEV_ENV == "work") and WORK_API_URL) or ((DEV_ENV == "home") and "https://api.openai.com/v1")),
       model = (
         ((DEV_ENV == "work") and "anthropic.claude-3-5-sonnet-20240620-v1:0")
         or ((DEV_ENV == "home") and "gpt-4o")
@@ -50,14 +49,6 @@ return {
         dismiss = "<leader>a4",
       },
     },
-    -- rag_service = {
-    --   enabled = true, -- Enables the RAG service
-    --   host_mount = os.getenv("HOME") .. "/Documents/code", -- Host mount path for the rag service
-    --   provider = "openai", -- The provider to use for RAG service (e.g. openai or ollama)
-    --   llm_model = "gpt-4o", -- The LLM model to use for RAG service
-    --   embed_model = "", -- The embedding model to use for RAG service
-    --   endpoint = "https://alfred.itools.anduril.dev/raw", -- The API endpoint for RAG service
-    -- },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -70,7 +61,7 @@ return {
     "echasnovski/mini.pick", -- for file_selector provider mini.pick
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "ibhagwan/fzf-lua", -- for file_selector provider fzf
+    "ibhagwan/fzf-lua", -- for file_selectorgg provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
