@@ -14,7 +14,7 @@ return {
     -- explorer = { enabled = true }, -- there is adefault with lazyvim
     indent = { enabled = true, animate = { enabled = false } },
     input = { enabled = true },
-    picker = { enabled = true },
+    -- picker = { enabled = true },
     notifier = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
