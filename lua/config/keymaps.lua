@@ -49,8 +49,8 @@ map("n", "<leader>h9", "<cmd>lua require('harpoon.mark').nav_file(9)<CR>")
 map("n", "<leader>ax", "<cmd>AvanteClear<CR>")
 
 -- tab through hooks
-map("n", "0", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
-map("n", "9", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
+map("n", "9", "<cmd>lua require('harpoon.ui').nav_next()<CR>")
+map("n", "8", "<cmd>lua require('harpoon.ui').nav_prev()<CR>")
 
 -- -- grep search in the cwd
 -- map("n", "<leader>/", "<cmd>Telescope live_grep (CWD)<cr>")

@@ -30,7 +30,7 @@ return {
       ),
       timeout = 30000, -- timeout in milliseconds
       -- temperature = 0, -- adjust if needed
-      -- max_tokens = 4096,
+      max_tokens = 4096,
     },
 
     behaviour = {
