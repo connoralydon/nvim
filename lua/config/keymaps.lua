@@ -32,7 +32,11 @@ map("v", "gm", "<cmd>Telescope lsp_references<cr>")
 
 map("n", "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
 map("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")
-map("n", "<leader>hd", "<cmd>lua require('harpoon.mark').rm_file()<CR><cmd>lua require('harpoon.ui').nav_prev()<CR>")
+map(
+  "n",
+  "<leader>hd",
+  "<cmd>lua require('harpoon.mark').rm_file()<CR><cmd>w<CR><cmd>lua require('harpoon.ui').nav_prev()<CR>"
+)
 
 -- harpoon hook navigation
 map("n", "<leader>h1", "<cmd>lua require('harpoon.mark').nav_file(1)<CR>")
