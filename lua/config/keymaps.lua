@@ -21,6 +21,8 @@ map("n", "g#", "g#zz")
 -- centering when you go up and down
 map("n", "j", "jzz")
 map("n", "k", "kzz")
+map("n", "<Up>", "<Up>zz")
+map("n", "<Down>", "<Down>zz")
 
 -- centering when page up, page down
 map("n", "<C-u>", "<C-u>zz")
