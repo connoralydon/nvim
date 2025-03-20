@@ -35,6 +35,7 @@
             nodejs_23
             go
             rsync
+            tmux
           ];
           shellHook = ''
 
