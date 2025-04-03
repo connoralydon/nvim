@@ -23,7 +23,7 @@ return {
     words = { enabled = true },
     terminal = {
       win = {
-        position = "float",
+        -- position = "float",
         style = "terminal",
         interactive = true,
         auto_insert = true,

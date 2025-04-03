@@ -10,7 +10,8 @@ local WORK_API_URL = os.getenv("WORK_API_URL")
 --
 -- guide - https://nithinbekal.com/posts/avante-nvim/
 return {
-  "yetone/avante.nvim",
+  -- "yetone/avante.nvim",
+  dir = "~/projects/avante.nvim",
   event = "VeryLazy",
   lazy = false,
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
@@ -18,6 +19,7 @@ return {
     -- add any opts here
     -- for example
     provider = "openai",
+    -- debug = true,
     auto_suggestions_provider = "openai",
     -- cursor_applying_provider = "openai",
     openai = {
@@ -63,7 +65,7 @@ return {
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selectorgg provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
+    -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
